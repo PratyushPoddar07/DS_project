@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Predictor</title>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <h1>ML Algorithm Predictor</h1>
+
+    <form id="predict-form">
+        <label for="x">X (e.g., [[1], [2], [3]]):</label><br>
+        <textarea id="x" rows="4" cols="40"></textarea><br><br>
+
+        <label for="y">y (e.g., [2, 4, 6]):</label><br>
+        <textarea id="y" rows="2" cols="40"></textarea><br><br>
+
+        <label for="test_size">Test Size (e.g., 0.2):</label><br>
+        <input type="text" id="test_size" value="0.2"><br><br>
+
+        <label for="algorithm">Choose Algorithm:</label><br>
+        <select id="algorithm">
+            <option value="LinearRegression">Linear Regression</option>
+            <option value="LogisticRegression">Logistic Regression</option>
+            <option value="DecisionTree">Decision Tree</option>
+            <option value="KNN">KNN</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>Result:</h3>
+    <div id="result"></div>
+</body>
+</html>
